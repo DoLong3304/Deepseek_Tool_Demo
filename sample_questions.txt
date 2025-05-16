@@ -1,23 +1,35 @@
-Basic Queries (Retrieving Data & Filtering):
-
-- List all the names of the artists in the artists table.
-- Find all tracks from the tracks table that have a UnitPrice greater than $0.99.
-- Retrieve the FirstName, LastName, and Email of all customers from the customers table.
-- What are the names of all the playlists in the playlists table?
-- List all distinct cities where customers are located, from the BillingCity column in the invoices table.
-
-Intermediate Queries (Joins & Grouping):
-- Display the Name of each track and the Title of the album it belongs to. (Hint: Join tracks and albums tables)
-- List the names of all tracks that belong to the 'Rock' genre. (Hint: Join tracks and genres tables)
-- Show the InvoiceDate and total amount (UnitPrice * Quantity from invoice_items) for InvoiceId 10. (Hint: Join invoices and invoice_items)
-- How many tracks are there in each playlist? Display the playlist Name and the count of tracks. (Hint: Join playlists, playlist_track, and use COUNT with GROUP BY)
-- Find the names of all albums released by the artist 'Led Zeppelin'. (Hint: Join artists and albums)
-- List the FirstName and LastName of employees and the FirstName and LastName of the employee they report to (their manager). (Hint: Self-join the employees table)
-
-Advanced Queries (Subqueries, Complex Joins & Aggregations):
-- Find the names of customers who have made at least one purchase (i.e., appear in the invoices table).
-- List the top 5 most expensive tracks based on UnitPrice. Display the track Name and UnitPrice.
-- For each genre, find the total number of tracks. Display Genre name and the track count.
-- Which customers (list their FirstName and LastName) have a support representative with the Title of 'IT Staff'? (Hint: Join customers and employees tables)
-- Calculate the total sales (sum of UnitPrice * Quantity) for each country listed in the invoices table (BillingCountry). Display the country and total sales.
-- Find artists who have composed tracks in more than one genre. List the artist's Name. (Hint: This might require joining artists, albums, tracks, genres and using COUNT(DISTINCT GenreId) with GROUP BY and HAVING)
+1. Can I get a list of all artist names?
+2. Show me all tracks that cost more than $0.99.
+3. What are the first names, last names, and email addresses of all our customers?
+4. What are the names of all the playlists we have?
+5. Which distinct cities do our customers bill to?
+6. For every track, what's its name and the album it's on?
+7. What are the names of all the 'Rock' songs?
+8. For invoice number 10, what was the date and the total amount?
+9. How many songs are in each playlist? I need the playlist name and the song count.
+10. What albums did 'Led Zeppelin' release?
+11. Who reports to whom in the company? List employee names and their manager's names.
+12. Can you give me the names of customers who have actually bought something?
+13. What are our top 5 most expensive tracks? Show their names and prices.
+14. How many tracks do we have for each genre? Show the genre name and the track count.
+15. Which customers are supported by someone in 'IT Staff'? I need their first and last names.
+16. How much total money have we made from sales in each country? Show the country and the total sales.
+17. Which artists have composed songs in more than one genre? List their names.
+18. Can I see a list of all employees, their hire dates, ordered from the earliest hired?
+19. What are the names and composers of tracks where we know who the composer is?
+20. What different kinds of media types do we offer?
+21. What's the average price of tracks for each media type?
+22. Which customers placed an order in 2010? List their first and last names.
+23. For each album, what's the total file size of all its tracks? Show album title and total size.
+24. Which playlists have songs by 'Mozart'?
+25. For each employee, show their full name and how many customers they support.
+26. Which customer has spent the most money with us overall? Show their first and last name.
+27. Are there any tracks that have never been sold? List their names.
+28. Which music genres include tracks from more than five different albums?
+29. What's the average amount for an invoice?
+30. Can you list employees who are 'Sales Support Agents' but report to different managers?
+31. For each artist, what's the average length of their songs?
+32. Which playlist has the longest total playing time?
+33. Which customers have bought tracks that are longer than 5 minutes? List their first and last names.
+34. How much revenue has each media type generated? Show the media type name and the total revenue.
+35. Can you list all employees who don't manage anyone?
