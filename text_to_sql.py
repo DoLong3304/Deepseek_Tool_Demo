@@ -194,18 +194,21 @@ def execute_sql(sql):
             for statement in statements:
                 statement = statement.strip()
                 if statement:  # Skip empty statements
-                    result = connection.execute(text(statement))
-                    if result.returns_rows:
-                        # Handle SELECT or similar queries
-                        data = result.fetchall()
-                        columns = result.keys()
-                        st.text("Query Results:")
-                        st.dataframe(pd.DataFrame(data, columns=columns))
-                    else:
-                        # Handle INSERT, UPDATE, DELETE, etc.
-                        st.success(f"Query executed successfully. Rows affected: {result.rowcount}")
+                    try:
+                        result = connection.execute(text(statement))
+                        if result.returns_rows:
+                            # Handle SELECT or similar queries
+                            data = result.fetchall()
+                            columns = result.keys()
+                            st.text("Query Results:")
+                            st.dataframe(pd.DataFrame(data, columns=columns))
+                        else:
+                            # Handle INSERT, UPDATE, DELETE, etc.
+                            st.success(f"Query executed successfully. Rows affected: {result.rowcount}")
+                    except SQLAlchemyError as e:
+                        st.error(f"Error executing statement: {statement}\n{str(e)}")
     except SQLAlchemyError as e:
-        st.error(f"Error executing SQL: {str(e)}")
+        st.error(f"Error connecting to the database: {str(e)}")
 
 # UI Components
 def render_header():
