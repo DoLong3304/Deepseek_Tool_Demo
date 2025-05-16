@@ -1,0 +1,6 @@
+- Install Deepseek model (Example: deepseek-r1:8b):
+ollama pull deepseek-r1:8b
+- Install required packages (pip):
+pip install -r requirements.txt
+- Run with Streamlit:
+streamlit run text_to_sql.py
